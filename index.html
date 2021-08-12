@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: verdana, sans-serif;
+        }
+
+        .container {
+
+            color: grey;
+            max-width: 1120px;
+            margin: 0 auto;
+            
+        }
+
+        .conatainer-nav {
+            display: flex;
+            justify-content: space-between;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-around;
+            background-color: rgb(230, 230, 230);
+            flex-wrap: wrap;
+        }
+
+        .nav-right {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .nav-left h2 {
+            color: grey;
+            font-weight: lighter;
+            float: left;
+            text-align: center;
+            padding: 19px 16px;
+            text-decoration: none;
+        }
+
+        .nav-list {
+            padding-inline-start: 0px;
+        }
+
+        .menu-icon {
+            display: none;
+        }
+
+        @media screen and (max-width:992px) {}
+
+        .nav-item {
+            align-items: center;
+            list-style-type: none;
+            border: none;
+            background-color: rgb(230, 230, 230);
+            font-size: medium;
+            /* margin: 10px 10px; */
+            color: grey;
+            cursor: pointer;
+            float: left;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .nav-item:hover {
+            background: darkgrey;
+            color: white;
+
+        }
+
+        .profile {
+            display: flex;
+            align-items: flex-start;
+            margin: 20px 20px;
+        }
+
+        .user {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 15px 15px;
+        }
+
+        .user-details p {
+            margin: 1px;
+            color: darkgray;
+        }
+
+        .card {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .icons {
+            font-size: 36px;
+            color: lightgrey;
+            padding: 50px;
+        }
+
+        .icons h5 {
+            font-size: small;
+            margin: 5px 30px;
+        }
+
+
+
+        .slick {
+            display: flex;
+        }
+
+        .coloumn1 {
+            padding: 10px;
+        }
+
+        .coloumn1 video {
+            height: auto;
+        }
+
+
+        .button {
+            height: 10px;
+            width: 30px;
+        }
+
+        .bottom-nav {
+            display: flex;
+            justify-content: center;
+            background-color: rgb(199, 198, 198);
+            height: 50px;
+        }
+
+        .bottom-nav h5 {
+            margin: 17px 8px;
+            font-weight: lighter;
+        }
+
+        video {
+            width: 100%;
+            /* height: 350px; */
+        }
+
+        .form input {
+            width: 100%;
+
+        }
+
+        @media screen and (max-width: 768px) {
+            .conatainer-nav {
+                max-width: 720px;
+            }
+
+            .menu-icon {
+                display: inline-block;
+            }
+
+            .nav-bar {
+                display: none;
+            }
+
+            .nav-right {
+                float: none;
+                width: 100%;
+                flex-direction: column;
+
+            }
+
+
+            .nav-left {
+                flex-direction: column;
+            }
+
+            .nav-item {
+                float: none;
+                width: 100%;
+            }
+            .card{
+                display: flex;
+                justify-content: center;
+            }
+        }
+
+        .slick-slide {
+            background: #e7e7e6;
+
+        }
+
+        button {
+            background: dodgerblue;
+        }
+    </style>
+
+    <style>
+        /* video form container */
+        .form{
+            background: #ccc;
+            padding: 20px;
+        }
+        .form input{
+            padding: 8px 12px ;
+            height: 36px;
+        }
+        .form input[type="submit"]{
+            background: dodgerblue;
+            color: white;
+            border: none;
+            outline: none;
+        }
+        .flex-container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .video-wrapper {
+            flex: 70%;
+            margin-bottom: 20px;
+        }
+
+        .form-wrapper {
+            flex: 30%;
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width:768px) {
+
+            .video-wrapper,
+            .form-wrapper {
+                flex: 100%;
+            }
+            .video-wrapper{
+                padding: 0px 20px;
+            }
+            .form-wrapper{
+                padding-right: 20px;
+            }
+        }
+        /* video form container */
+    </style>
+
+    <style>
+        /* image carousel */
+        .slick-prev{
+            left : 0px
+        }
+        .slick-next{
+            right: 0px;
+
+        }
+        /* image carousel */
+    </style>
+
+
+</head>
+
+<body>
+    <nav>
+        <div class="conatainer-nav"> </div>
+        <div class="navbar">
+            <div class="nav-left">
+                <h2>Ford Eco Sport 2020</h2>
+            </div>
+            <button class="menu-icon">
+                <img src="hamburger.svg" alt="" srcset="">
+            </button>
+            <div class="nav-right">
+                <ul class="nav-list">
+                    <button class="nav-item">Home</button>
+                    <button class="nav-item">About</button>
+                    <button class="nav-item">How it works</button>
+                    <button class="nav-item">Contact</button>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <script>
+        let container = document.querySelector(".container");
+        let menuIcon = document.querySelector(".menu-icon");
+        let menuWrapper = document.querySelector(".nav-bar");
+
+        menuIcon.addEventListener('click', handleMenu);
+
+        function handleMenu() {
+            // console.log(menuWrapper.classList.co);
+            if (menuWrapper.classList.contains("nav-active")) {
+                menuWrapper.classList.remove("nav-active");
+                container.style.cssText = "flex-wrap:none";
+            } else {
+                menuWrapper.classList.add("nav-active");
+                container.style.cssText = "flex-wrap:wrap";
+            }
+
+
+            // menuWrapper.style.cssText = "display:flex;flex-direction: column;";
+
+        }
+    </script>
+    <div class="container">
+        <div class="card">
+            <div class="profile">
+                <div class="user">
+                    <i class="fa fa-user-circle-o" style="font-size:56px;color:lightgrey"></i>
+                </div>
+                <div class="user-details">
+                    <p style="font-weight: bold;color:grey;margin:5px 3px;">Jhon Hopkins</p>
+                    <p>Greate Car dealers Inc</p>
+                    <p>Market street,5th Ave,</p>
+                    <p>Sugar Land,TX,43089</p>
+                    <p>535-221-6678</p>
+                </div>
+            </div>
+
+            <div class="icons">
+                <i class="fa fa-facebook-f"></i>
+                <i class="fa fa-twitter"></i>
+                <i class="fa fa-instagram"></i>
+                <i class="fa fa-youtube"></i>
+                <h5>connect with us</h5>
+            </div>
+        </div>
+        <div class="content flex-container">
+            <div class="video-wrapper flex-item">
+                <video controls>
+                    <source src="movie.mp4" type="video/mp4">
+
+                </video>
+                <h2>Cut your cloud bills in half</h2>
+                <h6>Deploy more with our linux virtual machines,global infrastructure and simple pricing.No suprising
+                    bills,no lock-in and the same price accross every data center </h6>
+            </div>
+            <div class="form-wrapper flex-item">
+                <form class="form">
+                    <input type="text" id="fname" name="fname" placeholder="First name"><br><br>
+
+                    <input type="text" id="lname" name="lname" placeholder="Last name"><br><br>
+                    <input type="text" id="fname" name="fname" placeholder="Email address"><br><br>
+                    <input type="text" id="fname" name="fname" placeholder="Phone number"><br><br>
+                    <input type="text" id="fname" name="fname" placeholder="Comments"><br><br>
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+        <div style="max-width: 980px;margin: 0 auto;">
+            <div class="slick slider">
+                <div class="coloumn1">
+                    <video controls>
+                        <source src="movie.mp4" type="video/mp4">
+
+                    </video>
+                    <h2>Cut your cloud bills in half</h2>
+                    <h6>Deploy more with our linux virtual machines,global infrastructure and simple pricing.No
+                        suprising
+                        bills,no lock-in and the same price accross every data center </h6>
+                </div>
+
+                <div class="coloumn1">
+                    <video controls>
+                        <source src="movie.mp4" type="video/mp4">
+
+                    </video>
+                    <h2>Cut your cloud bills in half</h2>
+                    <h6>Deploy more with our linux virtual machines,global infrastructure and simple pricing.No
+                        suprising
+                        bills,no lock-in and the same price accross every data center </h6>
+                </div>
+                <div class="coloumn1">
+                    <video controls>
+                        <source src="movie.mp4" type="video/mp4">
+
+                    </video>
+                    <h2>Cut your cloud bills in half</h2>
+                    <h6>Deploy more with our linux virtual machines,global infrastructure and simple pricing.No
+                        suprising
+                        bills,no lock-in and the same price accross every data center </h6>
+                </div>
+                <div class="coloumn1">
+                    <video controls>
+                        <source src="movie.mp4" type="video/mp4">
+
+                    </video>
+                    <h2>Cut your cloud bills in half</h2>
+                    <h6>Deploy more with our linux virtual machines,global infrastructure and simple pricing.No
+                        suprising
+                        bills,no lock-in and the same price accross every data center </h6>
+                </div>
+                <div class="coloumn1">
+                    <video controls>
+                        <source src="movie.mp4" type="video/mp4">
+
+                    </video>
+                    <h2>Cut your cloud bills in half</h2>
+                    <h6>Deploy more with our linux virtual machines,global infrastructure and simple pricing.No
+                        suprising
+                        bills,no lock-in and the same price accross every data center </h6>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
+        integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript">
+        $('.slider').slick({
+            dots: true,
+            navs : true,
+            infinite: false,
+            speed: 300,
+            slidesToShow: 4,
+            slidesToScroll: 4,
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 3,
+                        infinite: true,
+                        dots: true
+                    }
+                },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+                // You can unslick at a given breakpoint now by adding:
+                // settings: "unslick"
+                // instead of a settings object
+            ]
+        });
+    </script>
+
+    <div class="bottom-nav">
+        <h5>Copyright2020.All rights reserved.</h5>
+        <h5>Terms of Use</h5>
+        <h5>Privacy policy</h5>
+    </div>
+
+</body>
+
+</html>
